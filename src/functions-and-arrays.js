@@ -1,41 +1,133 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
-
-
+function maxOfTwoNumbers(num1, num2) {
+ if (num1 > num2) {
+  return num1;
+ } else {
+  return num2;
+ }
+}
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
-
+function findLongestWord(words) {
+ let word = "";
+ for (let counter = 0; counter < words.length; counter +=1) {
+    if (word.length < words[counter].length) {
+      word = words[counter];
+    }
+   } if (word === "") {
+    return null;
+   }  
+   return word;
+}
+console.log(findLongestWord(words));
 
 
 // Iteration #3: Calculate the sum
-const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10]
 
-function sumNumbers() {}
+function sumNumbers(numbers) {
+  let sum = 0;
+  for (let addition = 0; addition < numbers.length; addition += 1) {
+     sum += numbers[addition]
+  } 
+  return sum;
+}
 
+console.log(sumNumbers(numbers));
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+function sum(bonusArr) {
 
 
+   if (bonusArr.length === 0) {
+    return 0;
+
+   }
+  let mixedResult = 0;
+
+  let numbValue = 0;
+  let lengthValue = 0;
+  let booleanValue = 0;
+
+  bonusArr.forEach(function  (arrElem) {
+    
+
+   if (typeof arrElem === "number") {
+    numbValue += arrElem;
+   }
+
+    if (typeof arrElem === "string") {
+      lengthValue += arrElem.length;
+    }
+
+    if (typeof arrElem === "boolean") {
+      if (arrElem) {
+        booleanValue += 1;
+      } else {
+        booleanValue += 0;
+      }
+    }
+
+    else if (typeof arrElem === "object") {
+      throw new Error("Unsupported data type sir or ma'am");
+    }
+
+  });
+
+  mixedResult = numbValue + lengthValue + booleanValue;
+
+  return mixedResult;
+}
+
+console.log(sum(mixedArr));
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(numbersAvg) {
+  let sum = 0;
+  for (const number of numbersAvg) {
+    sum += number;
+  } if (numbersAvg <= 1  ) {
+    return null;
+  }
+ let average = sum / numbersAvg.length;
+
+  return average;
+}
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(wordsArr) {
+  if (!wordsArr.length) {
+    return null;
+  }
+  let total = 0;
+  for (const item of wordsArr) {
+     total += item.length;
+  }
+  return total / wordsArr.length;
+ }
 
 // Bonus - Iteration #4.1
-function avg() {}
+const numberz = [2, 6, 9, 10, 7, 4, 1, 9];
+function avg(numberz) {
+  let sum = 0;
+  for (const number of numberz) {
+    sum += number;
+  } if (numberz <= 1) {
+    return null;
+  }
+  let average = sum / numberz.length;
+  return average;
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -52,14 +144,35 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(wordsUnique) {
+  if (!wordsUnique.length) {
+    return null;
+  }
+  const uniquifiedArray = [];
+  for (const word of wordsUnique) {
+    if (uniquifiedArray.indexOf(word) === -1) {
+      uniquifiedArray.push(word);
+    }
+  }
+  return uniquifiedArray;
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(wordFind, wordToCheck) {
+  if (!wordFind.length) {
+    return null;
+  }
+  for (const word of wordFind) {
+    if (word === wordToCheck) {
+      return true;
+    }
+  }
+  return false;
+}
 
 
 
@@ -78,7 +191,26 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(wordsCount) {
+ let count = 0
+  for (const word of wordsCount) {
+    if (word === wordCount) {
+      count += 1;
+    }
+    if ( !wordsCount) {
+      return 0;
+    }
+    if ( count === 1) {
+      return 1;
+    }
+    if (count === 0) {
+      return 0;
+    }
+    if (count === 5) {
+      return 5;
+    }
+  }
+}
 
 
 
